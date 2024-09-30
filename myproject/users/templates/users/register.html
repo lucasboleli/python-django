@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    Users
+{% endblock  %}
+
+{% comment %} {% block content %}
+    <section>
+        <h1>users</h1>
+        {% for user in users %}
+            <article class="user">
+                <p>{{ user.name }}</p>
+            </article>
+        {%endfor%}
+    </section>
+{% endblock  %} {% endcomment %}
+
+
+{% block content %}
+    <h1>Register new user</h1>
+    <form class="form-with-validation" action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button class="form-submit">Submit</button>
+    </form>
+
+{% endblock  %}
